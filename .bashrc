@@ -2,7 +2,7 @@
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
+        . /etc/bashrc
 fi
 
 # User specific environment
@@ -12,8 +12,10 @@ then
 fi
 export PATH
 
-# Uncomment the following line if you don't like systemctl's auto-paging feature:
-# export SYSTEMD_PAGER=
-
-# User specific aliases and functions
-export PS1="\[\e[32m\]\u\[\e[m\]@\h \[\e[32m\]\w\[\e[m\]> "
+# User specific aliases, variables and functions
+export EDITOR="emacs -nw"
+export PS1="\[\033[38;5;118m\]\u\[$(tput sgr0)\]@\h \[$(tput sgr0)\]\[\033[38;5;2m\]\w\[$(tput sgr0)\]> \[$(tput sgr0)\]"
+export DOOMWADDIR="$HOME/Games/doom/iwad"
+alias rm='rm -i'
+alias sys='systemctl'
+alias ydl='youtube-dl'
